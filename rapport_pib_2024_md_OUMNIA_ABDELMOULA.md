@@ -1,5 +1,9 @@
 # 📊 Analyse Comparative du PIB Mondial 2024
 
+OUMNIA ABDELMOULA
+<img src="Oumnia ABDELMOULA.png" style="height:464px;margin-right:432px"/>
+
+
 **Rapport d'Analyse Économique**  
 *Sources : FMI (Fonds Monétaire International), Banque Mondiale, Statista*  
 *Date : Octobre 2024*
