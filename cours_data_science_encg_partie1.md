@@ -249,6 +249,8 @@ plt.rcParams['figure.figsize'] = (12, 8)
 # Créer une figure avec plusieurs sous-graphiques
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 
+<img src="Graphe 1.ppg" style="height:464px;margin-right:432px"/>
+
 # 1. Histogramme
 axes[0, 0].hist(colonne, bins=30, edgecolor='black', alpha=0.7)
 axes[0, 0].set_title('Distribution des valeurs', fontsize=14, fontweight='bold')
@@ -262,16 +264,19 @@ axes[0, 0].axvline(colonne.median(), color='green', linestyle='--',
                    label=f'Médiane: {colonne.median():.2f}')
 axes[0, 0].legend()
 
+<img src="Graphe 2.ppg" style="height:464px;margin-right:432px"/>
 # 2. Boxplot
 axes[0, 1].boxplot(colonne.dropna(), vert=True)
 axes[0, 1].set_title('Boxplot - Détection des outliers', fontsize=14, fontweight='bold')
 axes[0, 1].set_ylabel('Valeur')
 
+<img src="Graphe 3.ppg" style="height:464px;margin-right:432px"/>
 # 3. Densité
 colonne.plot(kind='density', ax=axes[1, 0])
 axes[1, 0].set_title('Courbe de densité', fontsize=14, fontweight='bold')
 axes[1, 0].set_xlabel('Valeur')
 
+<img src="Graphe 3.ppg" style="height:464px;margin-right:432px"/>
 # 4. QQ-plot (pour tester la normalité)
 from scipy import stats
 stats.probplot(colonne.dropna(), dist="norm", plot=axes[1, 1])
