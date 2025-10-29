@@ -1,6 +1,14 @@
 # COURS DE SCIENCE DES DONNÉES
 ## École Nationale de Commerce et de Gestion (ENCG) - 4ème Année
 OUMNIA ABDELMOULA
+<img src="Graphe 1.png" style="height:464px;margin-right:432px"/>
+<img src="Graphe 2.png" style="height:464px;margin-right:432px"/>
+<img src="Graphe 3.png" style="height:464px;margin-right:432px"/>
+<img src="Graphe 4.png" style="height:464px;margin-right:432px"/>
+
+
+
+
 ---
 
 # PARTIE 1 : FONDAMENTAUX DE LA SCIENCE DES DONNÉES
