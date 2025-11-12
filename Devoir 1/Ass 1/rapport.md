@@ -1,4 +1,4 @@
-[forest-cover-analysis.md](https://github.com/user-attachments/files/23503758/forest-cover-analysis.md)
+[forest_cover_correlation_matrix.md](https://github.com/user-attachments/files/23503920/forest_cover_correlation_matrix.md)[forest-cover-analysis.md](https://github.com/user-attachments/files/23503758/forest-cover-analysis.md)
 # Guide Complet : Dataset Forest Cover Type (Covertype)
 
 ## 📊 Vue d'ensemble du Dataset
@@ -23,29 +23,21 @@ Prédire le type de couverture forestière uniquement à partir de variables car
 **Particularité importante** : Ces zones représentent des forêts avec un minimum de perturbations causées par l'homme, de sorte que les types de couverture forestière existants sont davantage le résultat de processus écologiques que de pratiques de gestion forestière.
 
 ---
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
+[Uploading forest_cover_correlation_matrix.m# Matrice de corrélation - Forest Cover Type Dataset
 
-# Charger le jeu de données
-data = pd.read_csv("covtype.csv")
+|                |   Elevation |   Aspect |   Slope |   HD_Hydrology |   VD_Hydrology |   HD_Roadways |   Hillshade_9am |   Hillshade_Noon |   Hillshade_3pm |   HD_Fire_Points |
+|:---------------|------------:|---------:|--------:|---------------:|---------------:|--------------:|----------------:|-----------------:|----------------:|-----------------:|
+| Elevation      |        1    |    -0.03 |    0.18 |           0.2  |           0.58 |         -0.27 |            0.42 |             0.46 |            0.41 |            -0.22 |
+| Aspect         |       -0.03 |     1    |    0.18 |           0.01 |          -0.04 |          0.05 |           -0.11 |            -0.08 |            0.09 |             0.01 |
+| Slope          |        0.18 |     0.18 |    1    |           0.23 |           0.25 |         -0.12 |           -0.15 |            -0.18 |           -0.19 |            -0.05 |
+| HD_Hydrology   |        0.2  |     0.01 |    0.23 |           1    |           0.25 |          0.16 |           -0.04 |            -0.06 |           -0.03 |             0.09 |
+| VD_Hydrology   |        0.58 |    -0.04 |    0.25 |           0.25 |           1    |         -0.18 |            0.26 |             0.28 |            0.25 |            -0.11 |
+| HD_Roadways    |       -0.27 |     0.05 |   -0.12 |           0.16 |          -0.18 |          1    |           -0.23 |            -0.2  |           -0.17 |             0.43 |
+| Hillshade_9am  |        0.42 |    -0.11 |   -0.15 |          -0.04 |           0.26 |         -0.23 |            1    |             0.86 |            0.52 |            -0.14 |
+| Hillshade_Noon |        0.46 |    -0.08 |   -0.18 |          -0.06 |           0.28 |         -0.2  |            0.86 |             1    |            0.85 |            -0.12 |
+| Hillshade_3pm  |        0.41 |     0.09 |   -0.19 |          -0.03 |           0.25 |         -0.17 |            0.52 |             0.85 |            1    |            -0.08 |
+| HD_Fire_Points |       -0.22 |     0.01 |   -0.05 |           0.09 |          -0.11 |          0.43 |           -0.14 |            -0.12 |           -0.08 |             1    |d…]()
 
-# Sélectionner les variables continues
-num_cols = [
-    'Elevation', 'Aspect', 'Slope', 'Horizontal_Distance_To_Hydrology',
-    'Vertical_Distance_To_Hydrology', 'Horizontal_Distance_To_Roadways',
-    'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm',
-    'Horizontal_Distance_To_Fire_Points'
-]
-
-# Calcul de la matrice de corrélation
-corr = data[num_cols].corr()
-
-# Visualisation
-plt.figure(figsize=(10,8))
-sns.heatmap(corr, annot=True, cmap='YlGnBu', fmt=".2f")
-plt.title("Matrice de corrélation - Variables continues (Forest Cover Type)")
-plt.show()
 
 ## 🌲 Les 4 Zones de Nature Sauvage (Wilderness Areas)
 
