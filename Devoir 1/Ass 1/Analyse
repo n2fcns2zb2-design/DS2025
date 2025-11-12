@@ -34,7 +34,32 @@
           "traceback": [
             "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
             "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
-            "\u001b[0;32m/tmp/ipython-input-914439700.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mfrom\u001b[0m \u001b[0mucimlrepo\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mfetch_ucirepo\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0;31m# fetch dataset\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mcovertype\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mfetch_ucirepo\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mid\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;36m31\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/tmp/ipython-input-914439700.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mfrom\u001b[0m \u001b[0mucimlrepo\u001b[0m \u001b[0;32mimport\u001b[0m \u00import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Charger le jeu de données
+data = pd.read_csv("covtype.csv")
+
+# Sélectionner les variables continues
+num_cols = [
+    'Elevation', 'Aspect', 'Slope', 'Horizontal_Distance_To_Hydrology',
+    'Vertical_Distance_To_Hydrology', 'Horizontal_Distance_To_Roadways',
+    'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm',
+    'Horizontal_Distance_To_Fire_Points'
+]
+
+# Calcul de la matrice de corrélation
+corr = data[num_cols].corr()
+
+# Visualisation
+plt.figure(figsize=(10,8))
+sns.heatmap(corr, annot=True, cmap='YlGnBu', fmt=".2f")
+plt.title("Matrice de corrélation - Variables continues (Forest Cover Type)")
+plt.show()
+
+
+1b[0mfetch_ucirepo\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0;31m# fetch dataset\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0mcovertype\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mfetch_ucirepo\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mid\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;36m31\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
             "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'ucimlrepo'",
             "",
             "\u001b[0;31m---------------------------------------------------------------------------\u001b[0;32m\nNOTE: If your import is failing due to a missing package, you can\nmanually install dependencies using either !pip or !apt.\n\nTo view examples of installing some common dependencies, click the\n\"Open Examples\" button below.\n\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n"
