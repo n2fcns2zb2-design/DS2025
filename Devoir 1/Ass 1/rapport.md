@@ -23,6 +23,29 @@ Prédire le type de couverture forestière uniquement à partir de variables car
 **Particularité importante** : Ces zones représentent des forêts avec un minimum de perturbations causées par l'homme, de sorte que les types de couverture forestière existants sont davantage le résultat de processus écologiques que de pratiques de gestion forestière.
 
 ---
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Charger le jeu de données
+data = pd.read_csv("covtype.csv")
+
+# Sélectionner les variables continues
+num_cols = [
+    'Elevation', 'Aspect', 'Slope', 'Horizontal_Distance_To_Hydrology',
+    'Vertical_Distance_To_Hydrology', 'Horizontal_Distance_To_Roadways',
+    'Hillshade_9am', 'Hillshade_Noon', 'Hillshade_3pm',
+    'Horizontal_Distance_To_Fire_Points'
+]
+
+# Calcul de la matrice de corrélation
+corr = data[num_cols].corr()
+
+# Visualisation
+plt.figure(figsize=(10,8))
+sns.heatmap(corr, annot=True, cmap='YlGnBu', fmt=".2f")
+plt.title("Matrice de corrélation - Variables continues (Forest Cover Type)")
+plt.show()
 
 ## 🌲 Les 4 Zones de Nature Sauvage (Wilderness Areas)
 
