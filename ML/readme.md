@@ -118,6 +118,16 @@ Importance :
 
 ---
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.figure()
+ax = plt.gca()
+sns.boxplot(data=X,orient="v",palette="Set1",width=1.5, notch=True)
+ax.set_xticklabels(ax.get_xticklabels(),rotation=90)
+plt.figure()
+corr = X.corr()
+sns.heatmap(corr)
+
 ## ✅ 9. Conclusion générale
 
 Ce dataset est utile pour :
