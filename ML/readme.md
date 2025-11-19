@@ -118,7 +118,6 @@ Importance :
 
 ---
 
-```python
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -150,5 +149,3 @@ Le modèle k-NN montre que :
 - La stratification est essentielle pour un split fiable
 
 ---
-
-
