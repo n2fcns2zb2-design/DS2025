@@ -118,15 +118,21 @@ Importance :
 
 ---
 
+```python
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+# Boxplots pour les variables
 plt.figure()
 ax = plt.gca()
-sns.boxplot(data=X,orient="v",palette="Set1",width=1.5, notch=True)
-ax.set_xticklabels(ax.get_xticklabels(),rotation=90)
+sns.boxplot(data=X, orient="v", palette="Set1", width=1.5, notch=True)
+ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
+
+# Heatmap de corrélation
 plt.figure()
 corr = X.corr()
 sns.heatmap(corr)
+
 
 ## ✅ 9. Conclusion générale
 
